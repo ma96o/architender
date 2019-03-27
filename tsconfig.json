@@ -5,15 +5,23 @@
     // Search under notde_modules for non-relative imports.
     "moduleResolution": "node",
     // Process & infer types from .js files.
-    "allowJS": true,
+    "allowJs": true,
     // Don't emit; allow Babel to transform files.
     "noEmit": true,
     // Enable strictest settings like strictNullChecks & noImplicitAny.
     "strict": true,
     // Disallow features that require cross-file information for emit.
-    "isolateModules": true,
+    "isolatedModules": true,
     // Import non-ES modules as default imports.
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    // additional
+		// for '$ npx tsc' error files at ./node_modules/
+    "lib": ["esnext"],
+    // Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "allowSyntheticDefaultImports": true,
+    // for error TS17004: Cannot use JSX unless the '--jsx' flag is provided
+		"jsx": "react"
   },
   "include": [
     "src"
